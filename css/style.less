@@ -1,0 +1,1176 @@
+// 引入字体族
+@font-face{
+    font-family: 'my font';
+    src: url(../font/msyhbd.ttc);
+}
+// 设置背景图
+body{
+    background-color: #F9C5D1;
+    // background-image: url(../img/5.png);
+    // background-repeat: no-repeat;
+}
+
+// 设置顶部导航条的样式
+.top-wrapper{
+    height: 48px;
+    border-top: 2px solid #FA7D3C;
+    // background-color: #FFFCFC;
+    background-color: #FFFCFC;
+    border-bottom: 1px solid #D0A5AF;
+    box-shadow: 0 0 10px rgba(0,0,0,.3);
+}
+
+.top{
+    max-width: 1280px;
+    height: 48px;
+    margin: 0 auto;
+    background-color:#fff;
+    // 设置为弹性盒子，水平排列
+    display: flex;
+
+    // 设置第一部分 logo
+    .top-first{
+        width: 140px;
+        height: 48px;
+        // 将图标和文字垂直居中
+        // line-height: 48px;
+        background-color: #FFFCFC;
+        // 将图标和文字水平居中
+        text-align: center;
+        
+        // 设置 微博 文字样式
+        span{
+            font-size:20px;
+            color: #494949;
+            vertical-align:8%;
+        }
+       
+    }
+
+    // 设置第二部分 搜索框
+    .top-second{
+        width: 468px;
+        height: 28px;
+        background-color: #F2F2F5;
+        border: 1px solid #ccc;
+        margin-top: 10px ;
+        // 开启相对定位
+        position: relative;
+
+        .button1{
+            width: 18px;
+            height: 23px;
+            float: right;
+            font-size: 18px;
+            padding-right: 12px;
+            padding-top:5px;
+            color: #696E78;
+        }
+
+        // 设置下拉框
+        .list{
+            display: none;
+            width: 460px;
+            background-color: #fff;
+            // 开启绝对定位
+            position: absolute;
+            margin-top:30px;
+            box-shadow: 0 0 10px rgba(0,0,0,.3);
+
+            a{
+                display: block;
+                margin-left: 19px;
+                height: 32px;
+                line-height: 32px;
+                z-index: 100;
+                color: #333333;
+
+                &:active {
+                    background-color: #F2F2F5;
+                }
+            }
+
+            .list-first{
+                color: #FA7D3C;
+            }
+
+        }
+
+        // 搜索下拉框显示
+        &:active{
+            border: 1px solid #FA7D3C;
+            background-color: #fff;
+        }
+
+        &:active .list{
+            display: block;
+            border: 1px solid #FA7D3C;
+        }
+
+    }
+
+    // 设置第三部分 图标
+    .top-third{
+        width: 610px;
+        background-color: #fff;
+        display: flex;
+        margin-left: 77px;
+
+        // 设置第一部分
+        .top-third-one{
+            display: flex;
+            width: 450px;
+            height: 26px;
+            background-color: #fff;
+            margin: 11px 0;
+            justify-content: space-evenly;
+            color: #6B7079; 
+            border-right: 1px solid #D9D9D9;
+     
+            a{
+                justify-content: space-between;
+                font-size: 14px; 
+                color: #6B7079;
+                
+                span{
+                    vertical-align: middle;
+                }
+                
+
+                i{
+                    font-size: 22px;
+                    vertical-align: middle;
+                }
+
+                &:hover{
+                    color: #EB7350;
+                }
+            }
+            
+    
+        }
+
+        // 设置第二部分
+        .top-third-two{
+            width: 130px;
+            height: 24px;
+            background-color: #fff;
+            margin: 12px 0 12px 14px;
+            // 设置为弹性盒
+            display: flex;
+            justify-content:space-around;
+            font-size: 20px;
+            color: #6B7079; 
+            // 设置相对定位
+            position: relative;
+
+            // 设置第一个小部分
+            .button2{
+                // 设置小三角
+             &::after{
+                display: none;
+                content: '';
+                // 开启绝对定位
+                position: absolute;
+                border-top: 0;
+                width: 0;
+                border: 8px solid transparent;
+                // 单独设置下边框颜色
+                border-bottom-color: #fff;
+                right: 0;
+                left: 0;
+                bottom: 0;
+                margin:0 0 -10px 12px;
+                z-index: 101;
+            }
+
+            // 设置第一个下拉
+            .nav1{
+                display: none;
+                //开启绝对定位
+                position: absolute;
+                width: 150px;
+                height: 259px;
+                background-color: #fff;
+                margin-top: 8px;
+                margin-left: -120px;
+                box-shadow: 0 0 8px rgba(0,0,0,.3);
+                z-index: 100;
+                
+                li{
+                    display: block;
+                    font-size: 12px;
+                    line-height: 37px;
+                    padding-left: 19px;
+                    
+                    &:hover{
+                        background-color: #F2F2F5;
+                    }
+
+                    a{
+                        color: #333333;
+
+                        &:hover{
+                            color: #EB7350;
+                        }
+                    }
+
+                }
+
+                .nav1-last{
+                    border-top:1px solid #D9D9D9;
+                    padding-left: 50px;
+                }
+
+               
+            }
+
+                &:hover .nav1,
+                &:hover::after{
+                    display: block;
+                }
+
+                &:hover{
+                    color: #EB7350;
+                }
+            }
+            
+
+            // 设置第二个小部分
+            .button3{
+                // 设置第二个小三角
+                &::after{
+                    display: none;
+                    content: '';
+                    // 开启绝对定位
+                    position: absolute;
+                    border-top: 0;
+                    width: 0;
+                    border: 8px solid transparent;
+                    // 单独设置下边框颜色
+                    border-bottom-color: #fff;
+                    right: 0;
+                    left: 0;
+                    bottom: 0;
+                    margin:0 0 -11px 56px;
+                    z-index: 101;
+
+                }
+
+                // 设置第二个下拉
+                .nav2{
+                    display: none;
+                    width:114px ;
+                    height: 333px;
+                    background-color: #fff;
+                    // 开启绝对定位
+                    position: absolute;
+                    box-shadow: 0 0 8px rgba(0,0,0,.3);
+                    z-index: 100;
+                    margin-left: -76px;
+                    margin-top: 9px;
+
+                    li{
+                        display: block;
+                        line-height: 37px;
+                        font-size: 12px;
+                        padding-left: 18px;
+
+                        &:hover{
+                            background-color:#F2F2F5;
+                        }
+
+                        a{
+                            color: #333333;
+
+                            &:hover{
+                                color: #EB7350;
+                            }
+                        }     
+                    }
+
+                    .nav2-last{
+                        border-top: 1px solid #D9D9D9;
+                        padding-left: 45px;
+                    }
+                }
+
+                &:hover{
+                    color:#EB7350;
+                }
+
+                &:hover .nav2,
+                &:hover::after{
+                    display: block;
+                }
+               
+
+            }
+
+            // 设置第三个小部分
+            .button4{
+                &:hover{
+                    color: #EB7350;
+                }
+            }
+        
+
+            
+        }
+    }
+}
+
+// 设置头像及背景区域
+.avatar-wrapper{
+    width: 920px;
+    height:320px;
+    background-color: #fff;
+    margin: 35px auto;
+    margin-bottom: 0;
+}
+
+// 上半部分
+.avatar1{
+    width: 920px;
+    height: 280px;
+    border: 1px solid #D8ABB5;
+    background-image: url(../img/4.jpg);
+    background-repeat:no-repeat ;
+    border-bottom: none;
+
+    // 第一部分 头像
+    .avatar{
+        width: 920px;
+        height: 111px;
+        padding-top: 35px;
+      
+        .photo{
+            width: 88px;
+            height: 88px;
+            border-radius: 50%;
+            background-color: #F9F41C;
+            border:4px double transparent;
+            margin: 0 auto;
+            
+        }
+
+        img{
+            display: block;
+            margin-left: 485px;
+            margin-top: -22px;
+        }
+
+    }
+
+    // 第二部分 昵称
+    .user{
+        width: 920px;
+        height: 28px;
+        padding-top: 6px;
+        color: #fff;
+        text-shadow:0 0 3px rgba(0,0,0,1);
+
+        .user1{
+            display:flex;
+            width: 920px;
+            height:28px;
+            line-height: 28px;
+            
+            .user1-one{
+                font-size: 22px;
+                padding-left: 390px;
+            }
+
+            .img1{
+               margin: 4px 5px 0 1px;
+            }
+
+            .img2{
+                margin-top: 5px;
+            }
+        }
+
+    }
+
+    // 第三部分 认证介绍
+    .certification{
+        width: 920px;
+        height: 18px;
+        padding-top: 3px;
+        color: #fff;
+        text-shadow:0 0 3px rgba(0,0,0,.7);
+
+        ul{
+            display: flex;
+            width: 920px;
+            height: 16px;
+            line-height: 16px;
+            
+
+            .certification1{
+                padding-left: 430px;
+                padding-right: 4px;
+            }
+
+
+        }
+    }
+
+    // 第四部分 特别关注
+    .concern{
+        // 设置为弹性盒
+        display: flex;
+        width: 920px;
+        height: 50px;
+        // background-color: #fff;
+        align-items: center;
+
+        // 设置第一个小框
+        .concern1{
+            position: relative;
+            display: block;
+            width: 104px;
+            height: 34px;
+            // 文字垂直居中
+            line-height: 32px;
+            background-color: #5C606A;
+            color: #fff;
+            // 文字水平居中
+            text-align: center;
+            border-radius: 2px;
+            margin:0 7px 0 330px;
+            
+            span{
+                font-size: 14px;
+            }
+
+            // 设置第一个下拉
+            .concern1-list{
+                display: none;
+                position: absolute;
+                width: 130px;
+                line-height: 169px;
+                background-color: #fff;
+                border-radius: 2px;
+                box-shadow: 0 0 5px rgba(0,0,0,.3);
+                margin-left: 1px;
+                z-index: 100;
+                margin-top: 1px;
+
+                li{
+                    display: block;
+                    line-height: 42px;
+                    font-size:14px;
+
+                    a{
+                        color: #333333;
+
+                        &:hover{
+                            color: #EB7350;
+                        }
+                    }
+
+                    &:hover{
+                        background-color: #F2F2F5;
+                    }
+                }
+
+               
+
+            }
+
+            &:hover .concern1-list{
+                display: block;
+            }
+        }
+
+        // 设置第二个小框
+        .concern2{
+            display: block;
+            width: 24px;
+            height: 33.6px;
+            line-height: 33.6px;
+            background-color:#5C606A;
+            border-radius: 2px;
+            text-align: center;
+            margin-right:13px;
+
+            i{
+                color:#fff;
+
+            }
+        }
+
+        // 设置第三个小框
+        .concern3{
+            display: block;
+            width: 104px;
+            height: 34px;
+            line-height: 34px;
+            background-color: #5C606A;
+            text-align: center;
+            border-radius: 2px;
+            margin-right: 12px;
+
+            a{
+                font-size: 14px;
+                color: #fff;
+            }
+
+        }
+
+        // 设置第四个小框
+        .concern4{
+                position: relative;
+                display: block;
+                width: 33px;
+                height: 33.6px;
+                line-height: 33.6px;
+                text-align: center;
+                background-color:#5C606A;
+                border-radius: 2px;
+                text-align: center;
+
+                i{
+                    color:#fff;
+                }
+
+                // 设置第二个下拉
+            .concern4-list{
+                display: none;
+                position: absolute;
+                width:133px;
+                height:181px;
+                background-color: #fff;
+                border-radius: 2px;
+                box-shadow: 0 0 5px rgba(0,0,0,.3);
+                margin-top: 1px;
+
+                li{
+                    display: block;
+                    line-height: 45px;
+                    // background-color: #fff;
+
+                    a{
+                        font-size: 14px;
+                        color: #333333;
+
+                        &:hover{
+                            color: #EB7350;
+                        }
+                    }
+
+                    &:hover{
+                        background-color: #F2F2F5;
+                    }
+                }
+
+            }
+
+            &:hover .concern4-list{
+                display: block;
+            }
+            
+        }
+    }
+    
+}
+
+// 下半部分
+.avatar2{
+    display: flex;
+    width: 920px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    justify-content: space-around;
+    text-align: center;
+    border: 1px solid #D8ABB5;
+    background-color: #fff;
+    border-top: none;
+    
+    a{
+        color: #333333;
+    }
+
+    // 她的主页
+    .avatar2-one{
+        display: block;
+        width: 70px;
+        height: 38px;
+        border-bottom:3px solid #F7691D;
+        font-family: my font;
+    }
+
+    // 她的相册
+    .avatar2-two{
+        display: block;
+        width: 70px;
+        height: 38px;
+
+        &:hover{
+            border-bottom:3px solid #F7691D;
+        }
+    }
+
+    // 作品
+    .avatar2-three{
+        display: block;
+        width: 42px;
+        height: 38px;
+
+        &:hover{
+            border-bottom:3px solid #F7691D;
+        }
+
+    }
+
+}
+
+// 设置主体左半部分
+.main-left{
+    width: 300px;
+    height: 268px;
+    margin-left: 300.8px;
+    margin-top: 18px;
+
+    // 设置左上部分
+    .main-left-top{
+        width: 300px;
+        height: 59.2px;
+        background-color: #fff;
+        margin-bottom: 18px;
+        border-radius: 2px;
+
+        ul{
+
+            display: flex;
+            text-align: center;
+            
+            .two{
+                border-left: 1px solid #D9D9D9;
+                border-right: 1px solid #D9D9D9;
+            }
+
+
+            li{
+                width: 99.2px;
+                display: block;
+                margin: 13px auto;
+
+                .number{
+                    margin-bottom: 4px;
+                    color: #333333;
+                }
+
+                span{
+                    color: #808080;
+                }
+                
+            }
+        }
+
+    }
+
+    // 设置左下部分
+    .main-left-bottom{
+        width: 300px;
+        height: 193.6px;
+        background-color: #fff;
+        border-radius: 2px;
+
+        // 第一部分
+        .main-left-bottom1{
+            display: block;
+            width: 300px;
+            height: 82.8px;
+            border-bottom: 1px solid #F2F2F5;
+
+            .main-left-bottom1-img{
+                display: block;
+                width: 268px;
+                height: 31.2px;
+                padding-bottom: 6.2px;
+                padding-left: 16px;
+                padding-top: 18px;
+            }
+
+            p{
+                display: block;
+                padding-left: 16px;
+            }
+        }
+
+        // 第二部分
+        .main-left-bottom2{
+            width: 300px;
+            height: 76.2px;
+            border-bottom: 1px solid #F2F2F5;
+
+            ul{
+                .main-left-bottom2-one{
+                    display:flex;
+                    width: 268px;
+                    height:38.1px ;
+                    margin-left: 18px;
+                    border-bottom: 1px solid #F2F2F5;
+                    
+                    i{
+                        display: block;
+                        color: #696E78;
+                        width: 25px;
+                        height: 17.6px;
+                        margin-top: 15px;
+                    }   
+                    
+                    span{
+                        display: block;
+                        margin-top: 15px;
+                    }
+                }
+    
+                .main-left-bottom2-two{
+                    display: flex;
+                    width: 268px;
+                    height:38.1px ;
+                    margin-left: 18px;
+
+                    i{
+                        display: block;
+                        color: #696E78;
+                        width: 25px;
+                        height: 17.6px;
+                        margin-top: 9px;
+                    }
+
+                    span{
+
+                        display: block;
+                        margin-top: 8px;
+                         a{
+                            color: #F08950;
+                        }
+                    }
+
+                   
+                }
+
+           }
+            
+
+        }
+
+        // 第三部分
+        .main-left-bottom3{
+            display: block;
+            width: 300px;
+            height: 36px;
+            text-align: center;
+            color: #333333;
+            padding-top: 10px;
+
+            a{
+                color: #333333;
+
+                &:hover{
+                    color: #EB7350;
+                }
+                
+
+            }
+
+           
+
+        }
+
+    }
+
+
+}
+
+// 设置主体右半部分
+.main-right{
+    margin-left: 622px;
+    
+    // 设置第一部分
+    .main-right1{
+        width: 600px;
+        height: 38px;
+        margin-top: -268px;
+        background-color: #F2F2F5;
+        margin-bottom: 13px;
+        border-radius: 2px;
+
+        ul{
+            display: flex;
+            text-align: center;
+
+            a{
+                color: #333;
+                
+                &:hover{
+                    color: #EC7958;
+                }
+            }
+
+                .main-right1-one{
+                    display: block;
+                    width: 90px;
+                    height: 36.6px;
+                    background-color: #fff;
+                    border-bottom: 2px solid #F7691D;
+                    border-right: 1px solid #D9D9D9;
+                    
+                    a{
+                        display: block;
+                        font-family: my font;
+                        padding-top: 11px;
+                    }
+                }
+
+                .main-right1-two{
+                    display: block;
+                    width: 90px;
+                    height: 36.6px;
+
+                    .main-right1-two1{
+                        i{
+                            color:#F7691D;
+                        }
+                    }
+
+                    a{
+                        display: block;
+                        padding-top: 11px;
+                    }
+
+                    &:hover{
+                        border-bottom: 2px solid #F7691D;
+                    }
+                }
+
+                .main-right1-three{
+                    display: block;
+                    width: 178px;
+                    height: 26px;
+                    background-color: #fff;
+                    margin-left: 140px;
+                    border: 1px solid #CCCCCC;
+                    margin-top: 5.5px;
+                    border-radius: 2px;
+                    box-shadow: 0 0 1px rgba(0,0,0,.2);
+
+                    .main-right1-search{
+                        display: flex;
+                        margin-left:130px;
+                        margin-top: 4px;
+                        
+                        a{
+                            font-size: 14px;
+                        }
+
+                        .main-right1-search1{
+                            display: block;
+                            font-size: 16px;
+                            color: #B4B7BC;
+                            margin-right: 6px;
+                            margin-left: 10px;
+                        }
+                        
+                    }
+                }
+        }
+
+    }
+
+    // 创建第二部分
+    .main-right2{
+        width: 600px;
+        border-radius: 2px;
+        background-color: #fff;
+
+        // 设置主微博页面
+        .main-right2-wrapper{
+            display: flex;
+            width: 563px;
+            padding-top: 25px;
+            margin-left: 25px;
+
+            // 设置头像
+            .main-right2-inner1{
+                width: 63px;
+
+                img{
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 50%;
+                }
+            }
+
+            // 设置主页面
+            .main-right2-inner2{
+                width: 500px;
+                height: 61.2px;
+
+                // 设置昵称
+                .main-right2-inner-info{
+                    width: 500px;
+                    height: 22.6px;
+                    position: relative;
+                    
+                    .lee{
+                        font-family: my font;
+                        font-size: 14px;
+                        color: #333;
+                    }
+
+                    span{
+                        color: #908090;
+                    }
+
+                    .info-photo{
+                        position: absolute;
+                        left: 80px;
+                        top: 2px;
+                    }
+                }
+
+                // 设置时间
+                .main-right2-inner-tme{
+                    width: 500px;
+                    height: 15.2px;
+
+                    span{
+                        color:#908090 ;
+                    }
+                }
+
+                // 设置文字内容
+                .main-right2-inner-content{
+                    width: 500px;
+                    height: 23.4px;
+                    display: flex;
+                    align-items: center;
+
+                    i{
+                        color: red;
+                    }
+                }
+
+
+            }
+        }
+
+        // 设置转发微博页面
+        .main-right2-expand{
+            width: 600px;
+            height: 382.8px;
+            background-color: #F2F2F5;
+
+            .main-right2-expand-wrapper{
+                display: block;
+                width: 500px;
+                height: 258.4px;
+                margin-left: 87px;
+
+                // 设置昵称
+                .main-right2-expand-info{
+                     width: 500px;
+                     height: 20.2px;
+                     line-height:20.2px;
+                     position: relative;
+                
+                    span{
+                          font-family: my font;
+
+                    }
+
+                    .info-photo{
+                        position: absolute;
+                        top: 2px;
+                        left: 84px;
+                        
+                    }
+            }
+
+               // 设置文字内容
+               .main-right2-expand-content{
+                   display: block;
+                   width: 500px;
+                   height: 42.6px;
+                   line-height: 19px;
+
+                   span{
+                       i{
+                           color: red;
+                       }
+                   }
+
+                   .expand-word{
+                       color: #EB7350;
+
+                       i{
+                        color: #EB7350;
+                       }
+                   }
+               }
+
+               // 设置视频
+               .main-right2-expand-video{
+                   display: block;
+                   width: 500px;
+                   height: 282px;
+
+                   video{
+                       width: 100%;
+                       height: 100%;
+                       // 视频完全填充在div中 
+                       object-fit: fill;
+                   }
+               }
+
+               // 设置时间及转发情况
+               .main-right2-expandr-infor{
+                //    display: flex;
+                   width: 500px;
+                   height: 16px;
+                   margin-top: 11px;
+
+                   span{
+                       color: #808080;
+                   }
+
+                   .main-right2-expandr-infor-list{
+                       display: block;
+                       margin-left: 290px;
+                       margin-top: -16px;
+                       ul{
+                            display: flex;
+
+                            .info-list1{
+                                border-left:1px solid #D9D9D9 ;
+                                border-right: 1px solid #D9D9D9;
+                            }
+
+                           li{
+                               width: 71px;
+                               height: 12px;
+                               line-height: 13.6px;
+                               position:relative;
+                               
+                               a{
+                                   color: #808080;
+                                   display:flex;
+                                   position: absolute;
+                                   left: 14px;
+
+
+                                i{
+                                    font-size: 14px;
+                                }
+    
+                               }
+                           }
+                        }
+                   }
+                   
+               }
+            }
+
+        }
+
+    }
+
+    // 创建第三部分
+    .main-right3{
+        width: 600px;
+        height: 38px;
+        background-color: #fff;
+        border-radius: 2px;
+
+        ul{
+            display: flex;
+
+            li{
+                display: block;
+                width: 149px;
+                height: 38px;
+
+                a{
+                    display: block;
+                    width: 149px;
+                    height: 22px;
+                    text-align: center;
+                    margin-top: 11px;
+                    color: #808080;
+                    border-right: 1px solid #D9D9D9;
+
+                    &:hover{
+                        color: #EB7350;
+                }
+                }
+
+                .thelast{
+                    border: none;
+                }
+            }
+        }
+    }
+}
+
+// 设置固定条
+.fixing-strip{
+    display: block;
+    width: 94px;
+    height: 295px;
+    margin-left: 1234px;
+    margin-top: -558px;
+    position: fixed;
+
+    li{
+        display: block;
+        width: 94px;
+        height: 26px;
+
+        a{
+            display: block;
+            width: 47px;
+            height: 24px;
+            line-height: 24px;
+            color: #EF98AD;
+            border-left: 4px solid #EF98AD;
+            text-align: center;
+            margin-top: 2px;
+
+            &:hover{
+                color: #E87A94;
+            }
+        }
+
+        .fixing-strip-one{
+            text-align: center;
+            display: block;
+            width: 46px;
+            height: 26px;
+            color: #fff;
+            background-color: #E87A94;
+            margin-top: -1px;
+            border-radius: 4px;
+            border-top-left-radius:0;
+            border-bottom-left-radius: 0;
+
+            &:hover{
+                color: #fff;
+            }
+        }
+
+        .fixing-strip-three{
+            display: block;
+            width: 71px;
+            border: none;
+            margin-top: -5px;
+        }
+
+    }
+
+}
